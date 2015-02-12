@@ -20,8 +20,7 @@ import java.util.List;
 public class App extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if (req.getRequestURI().endsWith("/db")) {
             showDatabase(req, resp);
@@ -30,8 +29,7 @@ public class App extends HttpServlet {
         }
     }
 
-    private void showHome(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    private void showHome(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         PrintWriter pw = resp.getWriter();
         pw.write("<html>");
@@ -73,8 +71,7 @@ public class App extends HttpServlet {
         resp.getWriter().print("Entrega PSP1 - Alejandra Chica\n" + resultado);
     }
 
-    private void showDatabase(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    private void showDatabase(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection connection = null;
         try {
             connection = getConnection();
